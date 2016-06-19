@@ -1,0 +1,10 @@
+
+Bkeypad			KEYWORD1
+
+
+init			KEYWORD2
+getKey			KEYWORD2
+
+reversalXY		KEYWORD2
+getIndex		KEYWORD2
+getLowIndex		KEYWORD2
