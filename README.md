@@ -1,4 +1,4 @@
-# KeyPad_brok1n
+# KeyPad_brok1n  version:0.0.1
 arduino Matrix keyboard library
 
 学习arduino 矩阵键盘的过程中。写的一个4*4矩阵键盘库。可以直接定义按下矩阵键盘要显示出来的字符 按下键之后。就可以得到你定义的按下键的字符
@@ -14,28 +14,5 @@ arduino Matrix keyboard library
 
 
 如果你发现按键和获得的字符不匹配。可以试着将 keyPin 二维数组的 第一行和第二行调换一下位置
-
-用法:
-#include \<bKeyPad.h\>
-
-char keyValue[][4] = { {'1', '2', '3', '+'}, {'4', '5', '6', '-'}, {'7', '8', '9', 'x'}, {'C', '0', '=', '/'} };
-int  keyPin[][4] = { { 30, 32, 34, 36 }, { 22, 24, 26, 28}};
-
-Bkeypad keypad;
-
-void setup() {
-  Serial.begin( 115200 );
-  keypad.init( keyValue, keyPin );
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-  char ch = keypad.getKey();
-  if( ch > -1 )
-    Serial.println( ch );
-  
-}
-
-
 
 
