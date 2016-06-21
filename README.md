@@ -15,4 +15,3 @@ arduino Matrix keyboard library
 
 如果你发现按键和获得的字符不匹配。可以试着将 keyPin 二维数组的 第一行和第二行调换一下位置
 
-
