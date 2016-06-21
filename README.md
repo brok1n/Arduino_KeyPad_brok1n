@@ -7,8 +7,7 @@ arduino Matrix keyboard library
 
 使用时。只需要定义矩阵键盘上你要按键后显示的字符的数组。和矩阵键盘连接的引脚数组即可。
 
-将本库代码下载后。解压后得到KeyPad_brok1n文件夹 将这个文件夹里的 .git 文件夹删除
-然后将KeyPad_brok1n文件夹放到arduino安装目录下的library 目录下。
+将本库代码下载后。解压后得到KeyPad_brok1n文件夹 将这个文件夹里的 Bkeypad文件夹复制到 arduino安装目录下的library 目录下。
 
 重新打开arduino ide  然后在  文件 -》示例 -》 KeyPad_brok1n -》 Example -》Keypad_Brok1n_example  就可以看到示例了。
 
