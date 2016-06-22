@@ -58,13 +58,13 @@ void Bkeypad::reversalXY( int flag )
     unsigned int pin0Mode = OUTPUT;
     unsigned int pin1Mode = INPUT_PULLUP;
     unsigned int digital0 = LOW;
-    unsigned int digital0 = HIGH;
+    unsigned int digital1 = HIGH;
     if( flag )
     {
         pin0Mode = INPUT_PULLUP;
         pin1Mode = OUTPUT;
         digital0 = HIGH;
-        digital0 = LOW;
+        digital1 = LOW;
     }
 
     for( i = 0; i < 4; ++ i )
@@ -75,8 +75,8 @@ void Bkeypad::reversalXY( int flag )
     delayMicroseconds(100);
     for( i = 0; i < 4; ++ i )
     {
-        digitalWrite(keyPin[0][i], HIGH);
-        digitalWrite(keyPin[1][i], LOW);
+        digitalWrite(keyPin[0][i], digital0);
+        digitalWrite(keyPin[1][i], digital1);
     }
     delayMicroseconds(100);
 }
