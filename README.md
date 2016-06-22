@@ -1,3 +1,8 @@
+
+# KeyPad_brok1n  version:0.0.2  20160622
+线翻转增加延时。优化部分写法。
+
+
 # KeyPad_brok1n  version:0.0.1
 arduino Matrix keyboard library
 
