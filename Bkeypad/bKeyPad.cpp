@@ -39,6 +39,12 @@ char Bkeypad::getKey()
             {
                 //上次有键按下、现在没有键按下。所以是抬起状态
                 preKey = keyValue[keyIndex1][keyIndex2];
+                preKeyCode1 = 0;
+                preKeyCode2 = 0;
+                keyCode1 = 0;
+                keyCode2 = 0;
+                keyIndex1 = 0;
+                keyIndex2 = 0;
                 return preKey;
             }
         }
@@ -49,31 +55,30 @@ char Bkeypad::getKey()
 void Bkeypad::reversalXY( int flag )
 {
     int i = 0;
+    unsigned int pin0Mode = OUTPUT;
+    unsigned int pin1Mode = INPUT_PULLUP;
+    unsigned int digital0 = LOW;
+    unsigned int digital0 = HIGH;
     if( flag )
     {
-        for( i = 0; i < 4; ++ i )
-        {
-            //x
-            pinMode(keyPin[0][i], INPUT_PULLUP);
-            digitalWrite(keyPin[0][i], HIGH);
-            //y
-            pinMode(keyPin[1][i], OUTPUT);
-            digitalWrite(keyPin[1][i], LOW);
-        }
-    }
-    else
-    {
-        for( i = 0; i < 4; ++ i )
-        {
-            //x
-            pinMode(keyPin[0][i], OUTPUT);
-            digitalWrite(keyPin[0][i], LOW);
-            //y
-            pinMode(keyPin[1][i], INPUT_PULLUP);
-            digitalWrite(keyPin[1][i], HIGH);
-        }
+        pin0Mode = INPUT_PULLUP;
+        pin1Mode = OUTPUT;
+        digital0 = HIGH;
+        digital0 = LOW;
     }
 
+    for( i = 0; i < 4; ++ i )
+    {
+        pinMode(keyPin[0][i], pin0Mode);
+        pinMode(keyPin[1][i], pin1Mode);
+    }
+    delayMicroseconds(100);
+    for( i = 0; i < 4; ++ i )
+    {
+        digitalWrite(keyPin[0][i], HIGH);
+        digitalWrite(keyPin[1][i], LOW);
+    }
+    delayMicroseconds(100);
 }
 
 int Bkeypad::getIndex( int index )
